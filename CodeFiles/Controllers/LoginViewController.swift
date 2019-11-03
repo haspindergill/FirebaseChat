@@ -19,7 +19,6 @@ class LoginViewController: UIViewController {
       if error != nil {
         print("error : \(error?.localizedDescription)"); return }
       else{
-        print(user?.uid)
         self.performSegue(withIdentifier: "MoveToChat", sender: user?.uid)
             }
         })    }
@@ -29,7 +28,7 @@ class LoginViewController: UIViewController {
         super.prepare(for: segue, sender: sender)
         let chatVc = segue.destination as! ChatViewController
         chatVc.senderId = sender as? String
-        chatVc.senderDisplayName =  "Haspinder"
+        chatVc.senderDisplayName =  "Haspinder" //Hard coded for sample
     }
 }
 
